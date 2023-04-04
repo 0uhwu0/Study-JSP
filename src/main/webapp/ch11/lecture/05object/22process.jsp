@@ -8,13 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>11번 파일</h1>
-	
-	<!-- 10번에 form을 작성해서 submit버튼 클릭 시 11번 파일로 post 요청 되도록 -->
-	
-	<p>이름 : ${param.username }</p>
+	<h1>22번</h1>
 	<p>이메일 : ${param.email }</p>
-	
-	<a href="10postForm.jsp">10번 파일로 이동</a>
+	<p>
+	영화 장르 :
+	<ul>
+		<li>${paramValues.genre[0] }</li>
+		<li>${paramValues.genre[1] }</li>
+		<li>${paramValues.genre[2] }</li>
+		<li>${paramValues.genre[3] }</li>
+		<li>${paramValues.genre[4] }</li>
+	</ul>
+	</p>
 </body>
 </html>
