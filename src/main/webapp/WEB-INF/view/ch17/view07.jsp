@@ -21,27 +21,36 @@
 		<c:forEach items="${players }" var="player">
 			<li>${player }</li>
 		</c:forEach>
-	</ul>
+	</ul>	
 	
 	<hr />
-	
 	<h1>선수 이름 수정</h1>
-	<c:url var="updateUrl" value="/lec/sample11"/>
+	<c:url var="updateUrl" value="/lec/sample11" />
 	<form action="${updateUrl }" method="post">
-		<input type="hidden" name="index" id="input2"/>
-		<input type="text" id="input1" name="name"/>
-		<input type="submit" value="수정"/>	
+		<input type="hidden" name="index" id="input2" />
+		<input type="text" id="input1" name="name" /> 
+		<input type="submit" value="수정" />
 	</form>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script>
-		$("li").click(function () {
-			const name = $(this).text();
-			const index = $("li").index(this);
-			$("#input1").val(name);
-			$("#input2").val(index);
-		});
-	</script>
+	
+	<!-- 삭제 폼 -->
+	<c:url var="deleteUrl" value="/lec/sample12" />
+	<form action="${deleteUrl }" method="post" >
+		<input type="hidden" name="index" id="input3" />
+		<input type="submit" value="삭제" />
+	</form>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+    $("li").click(function () {
+		const name = $(this).text();
+		const index = $("li").index(this);
+		
+		$("#input1").val(name);
+		$("#input2").val(index);
+		$("#input3").val(index);
+	});
+    </script>
 </body>
 </html>
